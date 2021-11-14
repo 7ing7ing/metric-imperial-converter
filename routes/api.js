@@ -10,14 +10,15 @@ module.exports = function (app) {
     const input = req.query.input;
     const initNum = convertHandler.getNum(input);
     const initUnit = convertHandler.getUnit(input);
+
+    if (!initNum && !initUnit) {
+      res.send("Invalid number and unit");
+    }
     if (!initNum) {
       res.send("Invalid number");
     }
-    if (!initNum) {
+    if (!initUnit) {
       res.send("Invalid unit");
-    }
-    if (!initNum && !initUnit) {
-      res.send("Invalid number and unit");
     }
     const returnNum = convertHandler.convert(initNum, initUnit);
     const returnUnit = convertHandler.getReturnUnit(initUnit);

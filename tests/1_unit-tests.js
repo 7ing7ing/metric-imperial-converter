@@ -96,7 +96,7 @@ describe("Unit Tests", function () {
     });
 
     it("Should correctly return an error for an invalid input unit.", function () {
-      assert.equal(convertHandler.getUnit("incorrectUnit"), "invalid unit");
+      assert.equal(convertHandler.getUnit("incorrectUnit"), undefined);
     });
 
     it("Should return the correct return unit for each valid input unit.", function () {

@@ -17,7 +17,7 @@ function ConvertHandler() {
   this.getUnit = function (input) {
     let unit = input.substring(input.search(/[a-zA-Z]/));
     if (!this.spellOutUnit(unit)) {
-      return "invalid unit";
+      return undefined;
     }
     if (unit !== "L") {
       unit = unit.toLowerCase();
